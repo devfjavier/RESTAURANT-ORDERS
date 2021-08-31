@@ -1,5 +1,8 @@
 "user strict";
 
+/**
+ * Logica para crear pedidos y cobrar los pedidos del usuario
+ */
 const user = {
     name: "Juan",
     age: 30,
@@ -9,6 +12,7 @@ const user = {
 let order = []
 let orderCost = 0
 
+// Lista todos los productos del menú en un formato amigable
 const showMenu = () => {
     console.log("CÓDIGO - NOMBRE DEL PRODUCTO - COSTO")
 
@@ -17,6 +21,7 @@ const showMenu = () => {
     }
 }
 
+// Función que guarda en la lista de pedidos cada producto que se pide
 const orderProduct = cod => {
     if (!cod || typeof cod === "number" || typeof cod === "boolean") return "Ingrese un codigo valido"
 
@@ -31,6 +36,7 @@ const orderProduct = cod => {
 
 const seeOrder = () => order
 
+// Función que calcula el costo de todos los pedidos 
 const calculateCost = () => {
     let cost = 0
     for (product of order) {
@@ -40,6 +46,7 @@ const calculateCost = () => {
     return orderCost
 }
 
+// Función que calcula y guarda en la deuda el costo de todos los pedidos y notifica al usuario
 const finalizeOrder = () => {
     calculateCost()
     user.debt = orderCost
@@ -50,6 +57,7 @@ const finalizeOrder = () => {
     return `${user.name}, debes pagar ${user.debt} USD`
 }
 
+// Función que permite pagar todo el pedido y entregar el cambio sies necesario
 const payOrder = amountDelivered => {
     if (amountDelivered > user.debt) {
         let message = `Tu pedido ha sido pagado y tu cambio es de ${amountDelivered - user.debt}`

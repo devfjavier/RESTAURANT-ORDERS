@@ -1,5 +1,8 @@
 "use strict";
 
+/**
+ * Listado de todos los productor del menú del restaurante
+ */
 const products = [
     {
         name: "Hamburguesa simple",

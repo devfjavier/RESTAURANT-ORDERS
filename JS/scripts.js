@@ -7,6 +7,7 @@ const user = {
 }
 
 const order = []
+let orderCost = 0
 
 const showMenu = () => {
     console.log("CÓDIGO - NOMBRE DEL PRODUCTO - COSTO")
@@ -29,3 +30,12 @@ const orderProduct = cod => {
 }
 
 const seeOrder = () => order
+
+const calculateCost = () => {
+    let cost = 0
+    for (product of order) {
+        cost += product.cost
+    }
+    orderCost = cost
+    return orderCost
+}

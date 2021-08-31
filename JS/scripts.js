@@ -6,7 +6,7 @@ const user = {
     debt: 0
 }
 
-const order = []
+let order = []
 let orderCost = 0
 
 const showMenu = () => {
@@ -38,4 +38,14 @@ const calculateCost = () => {
     }
     orderCost = cost
     return orderCost
+}
+
+const finalizeOrder = () => {
+    calculateCost()
+    user.debt = orderCost
+
+    order = []
+    orderCost = 0
+
+    return `${user.name}, debes pagar ${user.debt} USD`
 }

@@ -1,0 +1,26 @@
+:root {
+
+
+
+
+
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html, body, .content{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+img {
+    display: block;
+}
+
+.title {
+    margin: 0;
+    text-align: center;
+}

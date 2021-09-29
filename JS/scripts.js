@@ -1,11 +1,11 @@
 "user strict";
 
 /**
- * Logica para crear pedidos y cobrar los pedidos del usuario
+ * Logica de la consola para crear pedidos y cobrar los pedidos del usuario
  */
 const user = {
-    name: "Juan",
-    age: 30,
+    name: "Usuario",
+    age: 999999,
     debt: 0
 }
 

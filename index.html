@@ -7,55 +7,75 @@
     <title>Pedidos del Restaurante</title>
     <script src="JS/products.js"></script>
     <script src="JS/scripts.js"></script>
+    <script src="JS/uiScripts.js"></script>
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
     <MAIN class="content">
         <h1 class="title">BIENVENIDO AL RESTAURANTE</h1>
-        <section class="menu">
-            <h2 class="title">Menu</h2>
-            <ul class="list">
-                <article class="product">
-                    <div class="description">
-                        <h3 class="title">Hamburguesa simple</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="img-container">
-                        <img src="" alt="">
-                    </div>
-                </article>
-
-                <article class="product">
-                    <div class="description">
-                        <h3 class="title">Hamburguesa doble</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="img-container">
-                        <img src="" alt="">
-                    </div>
-                </article>
-
-                <article class="product">
-                    <div class="description">
-                        <h3 class="title">Papas fritas</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="img-container">
-                        <img src="" alt="">
-                    </div>
-                </article>
-
-                <article class="product">
-                    <div class="description">
-                        <h3 class="title">Refresco personal</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="img-container">
-                        <img src="" alt="">
-                    </div>
-                </article>
-            </ul>
-        </section>
+        <div class="container">
+            <section class="menu">
+                <h2 class="title">Menu</h2>
+                <ul class="list">
+                    <li>
+                        <article class="product">
+                            <div class="description">
+                                <h3 class="title">Hamburguesa simple</h3>
+                                <span>Precio: 20</span>
+                                <span>Codigo: H100</span>
+                            </div>
+                            <div class="img-container">
+                                <img class="img" src="https://images.unsplash.com/photo-1610970878459-a0e464d7592b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=924&q=80" alt="hamburguesa simple">
+                            </div>
+                            <button id="H100" class="orderProductBtn">Agregar</button>
+                        </article>
+                    </li>
+                    
+                    <li>
+                        <article class="product">
+                            <div class="description">
+                                <h3 class="title">Hamburguesa doble</h3>
+                                <span>Precio: 30</span>
+                                <span>Codigo: H200</span>
+                            </div>
+                            <div class="img-container">
+                                <img class="img" src="https://images.unsplash.com/photo-1614891669421-964261109bb4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80" alt="hamburguesa doble">
+                            </div>
+                            <button id="H200" class="orderProductBtn">Agregar</button>
+                        </article>
+                        
+                    </li>
+    
+                    <li>
+                        <article class="product">
+                            <div class="description">
+                                <h3 class="title">Papas fritas</h3>
+                                <span>Precio: 8</span>
+                                <span>Codigo: P100</span>
+                            </div>
+                            <div class="img-container">
+                                <img class="img" src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80" alt="papas fritas de la hamburguesa">
+                            </div>
+                            <button id="P100" class="orderProductBtn">Agregar</button>
+                        </article>                    
+                    </li>
+    
+                    <li>
+                        <article class="product">
+                            <div class="description">
+                                <h3 class="title">Refresco personal</h3>
+                                <span>Precio: 6</span>
+                                <span>Codigo: R100</span>
+                            </div>
+                            <div class="img-container">
+                                <img class="img" src="https://images.unsplash.com/photo-1606411333059-070a6882f2ce?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80" alt="coca-cola personal">
+                            </div>
+                            <button id="R100" class="orderProductBtn">Agregar</button>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+        </div>
     </MAIN>
 </body>
 </html>

@@ -78,8 +78,21 @@
     
             <section class="orders">
                 <h2 class="title">Pedido</h2>
-                <ul id="order-list" class="list">  
-                </ul>
+                <div class="container">
+                    <ul id="order-list" class="list">  
+                    </ul>
+
+                    <div class="order-state">
+                        <div>Produtos: <span id="products-number">0</span></div>
+                        <div>Precio total: <span id="total-price">0</span>$</div>
+                        <div class="pay-order">
+                            <button id="pay-button">Pagar</button>
+                            <label>
+                                <input class="mount" type="number">
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </MAIN>

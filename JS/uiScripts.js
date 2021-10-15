@@ -14,6 +14,23 @@ function loadJS() {
 
             order.push(productFound)
             renderProduct(productFound.name, productFound.code, productFound.cost)
+
+            const deleteProdBtn = document.querySelectorAll(".delete-product")
+
+            for (const btn of deleteProdBtn) {
+                btn.addEventListener("click", () => {
+                    const lengthId = btn.parentElement.id.length
+                    const prodCode = String(btn.parentElement.id.slice(5, lengthId))
+
+                    for (let index = 0; index < order.length; index++) {
+                        if (order[index].code === prodCode) {
+                            order.splice(index, 1)
+                            break;
+                        }
+                    }
+                    btn.parentElement.remove()
+                })
+            }
         })
     })
 

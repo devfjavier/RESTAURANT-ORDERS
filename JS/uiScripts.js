@@ -8,7 +8,7 @@ addEventListener("DOMContentLoaded", loadJS)
 function loadJS() {
     const orderProductBtn = Array.from(document.querySelectorAll(".orderProductBtn"))
 
-    orderProductBtn.map((button) => {
+    orderProductBtn.map(button => {
         button.addEventListener("click", () => {
             const productFound = products.find(prod => prod.code === button.id)
 
@@ -20,23 +20,32 @@ function loadJS() {
     const renderProduct = (name, code, cost) => {
         const   orderList = document.getElementById("order-list")
         const   order = document.createElement("li"),
-                nameElement = document.createElement("h3"),
-                codeElement = document.createElement("span"),
-                costElement= document.createElement("span")
+                nameProd = document.createElement("h3"),
+                codeProd = document.createElement("span"),
+                costProd = document.createElement("span"),
+                deleteProd = document.createElement("button")
 
+        order.id = `prod-${code}`
         order.classList.add("order")
-        nameElement.classList.add("title")
-        nameElement.textContent = name
-        codeElement.textContent = code
-        costElement.textContent = `${cost}$`
+
+        nameProd.classList.add("title")
+        nameProd.textContent = name
+        
+        codeProd.textContent = code
+        costProd.textContent = `${cost}$`
+
+        deleteProd.classList.add("delete-product")
+        deleteProd.textContent = "-"
+
 
         order.innerHTML = `
-            ${nameElement.outerHTML}
-            ${codeElement.outerHTML}
-            ${costElement.outerHTML}
+            ${nameProd.outerHTML}
+            ${codeProd.outerHTML}
+            ${costProd.outerHTML}
+            ${deleteProd.outerHTML}
         `
-
         orderList.appendChild(order)
+
     }
 
 }

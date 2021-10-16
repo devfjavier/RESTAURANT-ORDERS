@@ -6,18 +6,18 @@
 addEventListener("DOMContentLoaded", loadJS)
 
 function loadJS() {
-    const orderProductBtn = Array.from(document.querySelectorAll(".orderProductBtn"))
+    const orderProductButtons = Array.from(document.querySelectorAll(".order-product"))
 
-    orderProductBtn.map(button => {
+    orderProductButtons.map(button => {
         button.addEventListener("click", () => {
             const productFound = products.find(prod => prod.code === button.id)
 
             order.push(productFound)
-            renderProduct(productFound.name, productFound.code, productFound.cost)
+            renderOrder(productFound.name, productFound.code, productFound.cost)
 
-            const deleteProdBtn = document.querySelectorAll(".delete-product")
+            const deleteOrderButtons = document.querySelectorAll(".delete-order")
 
-            for (const btn of deleteProdBtn) {
+            for (const btn of deleteOrderButtons) {
                 btn.addEventListener("click", () => {
                     const lengthId = btn.parentElement.id.length
                     const prodCode = String(btn.parentElement.id.slice(5, lengthId))
@@ -34,32 +34,32 @@ function loadJS() {
         })
     })
 
-    const renderProduct = (name, code, cost) => {
+    const renderOrder = (name, code, cost) => {
         const   orderList = document.getElementById("order-list")
         const   order = document.createElement("li"),
-                nameProd = document.createElement("h3"),
-                codeProd = document.createElement("span"),
-                costProd = document.createElement("span"),
-                deleteProd = document.createElement("button")
+                nameOrder = document.createElement("h3"),
+                codeOrder = document.createElement("span"),
+                costOrder = document.createElement("span"),
+                deleteOrder = document.createElement("button")
 
         order.id = `prod-${code}`
         order.classList.add("order")
 
-        nameProd.classList.add("title")
-        nameProd.textContent = name
+        nameOrder.classList.add("title")
+        nameOrder.textContent = name
         
-        codeProd.textContent = code
-        costProd.textContent = `${cost}$`
+        codeOrder.textContent = code
+        costOrder.textContent = `${cost}$`
 
-        deleteProd.classList.add("delete-product")
-        deleteProd.textContent = "-"
+        deleteOrder.classList.add("delete-order")
+        deleteOrder.textContent = "-"
 
 
         order.innerHTML = `
-            ${nameProd.outerHTML}
-            ${codeProd.outerHTML}
-            ${costProd.outerHTML}
-            ${deleteProd.outerHTML}
+            ${nameOrder.outerHTML}
+            ${codeOrder.outerHTML}
+            ${costOrder.outerHTML}
+            ${deleteOrder.outerHTML}
         `
         orderList.appendChild(order)
 

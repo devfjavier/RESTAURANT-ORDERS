@@ -5,13 +5,16 @@
  */
 let order = []
 
+
 const orderProduct = cod => {
+    // Validar que el dato cod sea string
     if (!cod || typeof cod === "number" || typeof cod === "boolean") return "Ingrese un codigo valido"
 
-    const productFound = products.find(product => product.code === cod)
+    const productFound = products.find(product => (product.code === cod))
     if (!productFound) return "El producto no existe"
     
     order.push(productFound)
+    renderOrder(productFound.name, productFound.code, productFound.cost)
     
     console.log("El producto ha sido agregado a su pedido. Su pedido es:")
     return seeOrder()
@@ -20,3 +23,26 @@ const orderProduct = cod => {
 // Funcion que permite ver el pedido por la consola
 
 const seeOrder = () => order
+
+// Funcion que permite que los botones de los productos de la interfaz de usuario
+// puedan ordenar un producto
+
+addEventListener("DOMContentLoaded", () => {
+    const orderProductButtons = Array.from(document.querySelectorAll(".order-product"))
+    const productsNumber = document.getElementById("products-number")
+    
+    for (const button of orderProductButtons) {
+        button.addEventListener("click", () => {
+            const productFound = products.find(product => product.code === button.id)
+
+            if (productFound) {
+                order.push(productFound)
+                productsNumber.textContent = order.length
+                console.log("El producto ha sido agregado a su pedido. Su pedido es:")
+                renderOrder(productFound.name, productFound.code, productFound.cost)
+
+                console.log(seeOrder())
+            }
+        })
+    }
+})

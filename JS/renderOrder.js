@@ -41,6 +41,7 @@ const renderOrder = (name, code, cost) => {
 const buttonCanDeleteOrder = button => {
     button.addEventListener("click", () => {
         const productsNumber = document.getElementById("products-number")
+        const totalPrice = document.getElementById("total-price")
         
         const orderId = button.parentElement.id
         const orderCode = orderId.slice(5, orderId.length)
@@ -49,6 +50,7 @@ const buttonCanDeleteOrder = button => {
             if (order[index].code === orderCode) {
                 button.parentElement.remove()
                 order.splice(index, 1)
+                totalPrice.textContent = calculateCost() 
                 console.log(order.length)
                 productsNumber.textContent = order.length
 

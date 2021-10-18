@@ -8,13 +8,22 @@
     <script src="JS/products.js"></script>
     <script src="JS/user.js"></script>
     <script src="JS/showMenu.js"></script>
-    <script src="JS/renderOrder.js"></script>
-    <script src="JS/deleteOrder.js"></script>
-    <script src="JS/orderProduct.js"></script>
+    <script src="JS/seeOrder.js"></script>
     <script src="JS/calculateCost.js"></script>
-    <script src="JS/finalizeOrder.js"></script>
-    <script src="JS/payOrder.js"></script>
     <script src="JS/scripts.js"></script>
+    <!-- Ordenar producto -->
+    <script src="JS/orderProduct/buttonsCanOrderProduct.js"></script>
+    <script src="JS/orderProduct/orderProduct.js"></script>
+    <script src="JS/orderProduct/renderOrder.js"></script>
+    <!-- Eliminar producto ordenado -->
+    <script src="JS/deleteProduct/buttonCanDeleteProduct.js"></script>
+    <script src="JS/deleteProduct/deleteOrder.js"></script>
+    <!-- Finalizar pedido -->
+    <script src="JS/finalizeOrder/buttonCanFinalizeOrder.js"></script>
+    <script src="JS/finalizeOrder/finalizeOrder.js"></script>
+    <!-- Pagar pedido -->
+    <script src="JS/payOrder/buttonCanPayOrder.js"></script>
+    <script src="JS/payOrder/payOrder.js"></script>
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
@@ -95,9 +104,11 @@
                         <div class="pay-container">
                             <button id="pay-order">Pagar</button>
                             <label>
-                                <input class="mount" type="number">
+                                <input id="amount-delivered" class="mount" type="number">
                             </label>
                         </div>
+                        <button id="finalize-order">Finalizar pedido</button>
+                        <div>Deuda: <span id="debt">0</span>$</div>
                     </div>
                 </div>
             </section>

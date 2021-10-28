@@ -8,11 +8,10 @@ const deleteOrder = code => {
     if (!code || typeof code === "number" || typeof code === "boolean") return "Ingrese un codigo valido"
     const productsNumber = document.getElementById("products-number")
     const totalPrice = document.getElementById("total-price")
+    const deleteOrderButtons = document.querySelectorAll(".delete-order")
     
     for (const index in order) {
         if (order[index].code === code) {
-            const deleteOrderButtons = document.querySelectorAll(".delete-order")
-
             for (const button of deleteOrderButtons) {
                 const orderId = button.parentElement.id
                 const orderCode = orderId.slice(5, orderId.length)
@@ -26,10 +25,7 @@ const deleteOrder = code => {
                     return seeOrder()
                 }
             }
-
-            return seeOrder()
         }
-
-        return "EL pedido no existe"
     }
+    return "EL pedido no existe"
 }

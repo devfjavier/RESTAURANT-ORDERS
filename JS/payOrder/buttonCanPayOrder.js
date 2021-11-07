@@ -9,22 +9,28 @@ addEventListener("DOMContentLoaded", () => {
     const debt = document.getElementById("debt")
     
     payOrderButton.addEventListener("click", () => {
+        if (!orderFinalized && order.length === 0) {
+            const message = "No has finalizado el pedido con ningun producto"
+            return console.log(message)
+        }
         if (!orderFinalized) {
-            const message = "Primero debes finalizar el pedido, click en el boton Finalizar pedido"
+            const message = "Primero tienes que finalizar el pedido"
             return console.log(message)
         }
 
         if (mount.value > user.debt) {
-            let message = `Tu pedido ha sido pagado y tu cambio es de ${mount.value - user.debt}`
+            let message = `Tu pedido ha sido pagado y tu cambio es de ${mount.value - user.debt} USD`
             user.debt = 0
             debt.textContent = user.debt
             orderFinalized = false
+            mount.value = ""
             console.log(message)
         }
         else if (mount.value == user.debt) {
             user.debt = 0
             debt.textContent = user.debt
             orderFinalized = false
+            mount.value = ""
             console.log(`Tu pedido ha sido pagado.`)
         }
         else {

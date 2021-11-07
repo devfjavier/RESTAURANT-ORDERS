@@ -11,6 +11,10 @@ addEventListener("DOMContentLoaded", () => {
     const totalPrice = document.getElementById("total-price")
 
     finalizeOrderButton.addEventListener("click", () => {
+        if (order.length === 0) {
+            return console.log("No tienes ningun producto ordenado");
+        }
+        
         calculateCost()
         user.debt = orderCost
         debt.textContent = user.debt

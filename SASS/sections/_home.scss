@@ -1,16 +1,12 @@
 .content {
-    display: flex;
-    padding: 2% 6%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url(../IMG/bg.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-
-    .container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding: 6% 0%;
+    flex-direction: column;    
+    
+    & > .container {
         display: grid;
+        overflow: auto;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
